@@ -1,12 +1,15 @@
 import './App.css';
-import { useViewportSize } from './hooks';
+import { useWindowScroll } from './hooks';
 
 export const App = () => {
-	const { height, width } = useViewportSize();
+	const { scroll, scrollTo } = useWindowScroll();
 
 	return (
-		<>
-			Width: {width}, height: {height}
-		</>
+		<div className='box'>
+			<p>
+				Scroll position x: {scroll.x}, y: {scroll.y}
+			</p>
+			<button onClick={() => scrollTo({ y: 0 })}>Scroll to top</button>
+		</div>
 	);
 };
