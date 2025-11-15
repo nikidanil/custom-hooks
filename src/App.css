@@ -1,12 +1,6 @@
 #root {
-	display: flex;
 	max-width: 1280px;
-	height: 1200px;
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
-}
-
-.box {
-	margin: auto 0;
 }

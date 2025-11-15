@@ -1,15 +1,8 @@
 import './App.css';
-import { useWindowScroll } from './hooks';
+import { useToggle } from './hooks';
 
 export const App = () => {
-	const { scroll, scrollTo } = useWindowScroll();
+	const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal']);
 
-	return (
-		<div className='box'>
-			<p>
-				Scroll position x: {scroll.x}, y: {scroll.y}
-			</p>
-			<button onClick={() => scrollTo({ y: 0 })}>Scroll to top</button>
-		</div>
-	);
+	return <button onClick={() => toggle()}>{String(value)}</button>;
 };
